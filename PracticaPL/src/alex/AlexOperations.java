@@ -168,7 +168,8 @@ public class AlexOperations {
 		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(),ClaseLexica.EOF);
 		}
 	public void error() {
-		System.err.println("***"+alex.fila()+" Caracter inexperado: "+alex.lexema());
-		System.exit(1);
+		//System.err.println("***"+alex.fila()+" Caracter inexperado: "+alex.lexema());
+		//System.exit(1);
+		throw new ECaracterInesperado(null);
 	}
 }

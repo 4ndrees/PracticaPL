@@ -12,7 +12,7 @@ package alex;
 	private AlexOperations ops;
 	public String lexema() {return yytext();}
 	public int fila() {return yyline+1;}
-	public int columna columna() {return yycolumn+1;}
+	public int columna() {return yycolumn+1;}
 %}
 
 %eofval{
@@ -28,7 +28,7 @@ numeroPositivo = [1-9]
 numero = ({numeroPositivo}|0)
 parteEntera = ({numeroPositivo}{numero}*|0)
 parteDecimal = \.{numero}*{numeroPositivo}
-parteExp = (e|E){parteEntera}
+parteExp = (e|E)(\+|\-)?{parteEntera}
 cadena = \"[^\"]*\"
 identificador = ({letra}|\_)({letra}|{numero}|\_)*
 literalEntero = (\+|\-)?{parteEntera}
