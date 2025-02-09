@@ -11,212 +11,161 @@ public class AlexOperations {
 	public AlexOperations(AnalizadorLexicoTiny alex) {
 		this.alex = alex;   
 	}
-	public UnidadLexica unidadEof() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	public void error() {
-		// TODO Auto-generated method stub
-		
-	}
 	public UnidadLexica unidadModulo() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.MODULO);
 	}
 	public UnidadLexica unidadAmpersand() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.AMPERSAND);
 	}
 	public UnidadLexica unidadPAp() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.PARENTESIS_APERTURA);
 	}
 	public UnidadLexica unidadPCierre() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.PARENTESIS_CIERRE);
 	}
 	public UnidadLexica unidadMul() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.MUL);
 	}
 	public UnidadLexica unidadSuma() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.MAS);
 	}
 	public UnidadLexica operadorComa() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.COMA);
 	}
 	public UnidadLexica unidadResta() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.MENOS);
 	}
 	public UnidadLexica operadorPunto() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.PUNTO);
 	}
 	public UnidadLexica unidadDiv() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.DIV);
 	}
 	public UnidadLexica unidadLiteralEntero() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaMultivaluada(alex.fila(), alex.columna(), ClaseLexica.LITERAL_ENT, alex.lexema());
 	}
 	public UnidadLexica operadorPuntoYComa() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.PUNTO_Y_COMA);
 	}
 	public UnidadLexica unidadMenor() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.MENOR);
 	}
 	public UnidadLexica unidadAsignacion() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.ASIGNACION);
 	}
 	public UnidadLexica unidadArroba() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.ARROBA);
 	}
 	public UnidadLexica unidadId() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaMultivaluada(alex.fila(), alex.columna(), ClaseLexica.IDENTIFICADOR, alex.lexema());
 	}
 	public UnidadLexica unidadCorcheteAp() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.CORCHETE_APERTURA);
 	}
 	public UnidadLexica unidadCorcheteCierre() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.CORCHETE_CIERRE);
 	}
 	public UnidadLexica unidadAcentoCircunflejo() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.ACENTO_CIRCUNFLEJO);
 	}
 	public UnidadLexica unidadLlaveAp() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.LLAVE_APERTURA);
 	}
 	public UnidadLexica unidadLlaveCierre() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.LLAVE_CIERRE);
 	}
 	public UnidadLexica unidadDistinto() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.DISTINTO);
 	}
 	public UnidadLexica unidadCadena() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaMultivaluada(alex.fila(), alex.columna(), ClaseLexica.CADENA, alex.lexema());
 	}
 	public UnidadLexica unidadDobleAmpersand() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.DOBLE_AMPERSAND);
 	}
 	public UnidadLexica unidadMenorIgual() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.MENOR_IGUAL);
 	}
 	public UnidadLexica unidadIgualdad() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.IGUALDAD);
 	}
 	public UnidadLexica unidadMayorIgual() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.MAYOR_IGUAL);
 	}
 	public UnidadLexica unidadIf() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.IF);
 	}
 	public UnidadLexica unidadNl() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.NL);
 	}
 	public UnidadLexica unidadOr() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.OR);
 	}
 	public UnidadLexica unidadLiteralReal() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaMultivaluada(alex.fila(), alex.columna(), ClaseLexica.LITERAL_REAL, alex.lexema());
 	}
 	public UnidadLexica unidadAnd() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.AND);
 	}
 	public UnidadLexica unidadInt() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.INT);
 	}
 	public UnidadLexica unidadNew() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.NEW);
 	}
 	public UnidadLexica unidadNot() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.NOT);
 	}
 	public UnidadLexica unidadBool() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.BOOL);
 	}
 	public UnidadLexica unidadCall() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.CALL);
 	}
 	public UnidadLexica unidadElse() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.ELSE);
 	}
 	public UnidadLexica unidadNull() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.NULL);
 	}
 	public UnidadLexica unidadProc() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.PROC);
 	}
 	public UnidadLexica unidadRead() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.READ);
 	}
 	public UnidadLexica unidadReal() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.REAL);
 	}
 	public UnidadLexica unidadTrue() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.TRUE);
 	}
 	public UnidadLexica unidadType() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.TYPE);
 	}
 	public UnidadLexica unidadFalse() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.FALSE);
 	}
 	public UnidadLexica unidadWhile() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.WHILE);
 	}
 	public UnidadLexica unidadWrite() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.WRITE);
 	}
 	public UnidadLexica unidadDelete() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.DELETE);
 	}
 	public UnidadLexica unidadString() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.STRING);
 	}
 	public UnidadLexica unidadStruct() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.STRUCT);
+	}
+	public UnidadLexica unidadEof() {
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(),ClaseLexica.EOF);
+		}
+	public void error() {
+		System.err.println("***"+alex.fila()+" Caracter inexperado: "+alex.lexema());
+		System.exit(1);
 	}
 }
