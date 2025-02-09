@@ -74,7 +74,7 @@ por = \*
 div = \/
 modulo = \% 
 menor = \<
-mayor = \<
+mayor = \>
 menorIgual = \<\=
 mayorIgual = \>\=
 igualdad = \=\=

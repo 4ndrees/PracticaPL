@@ -11,20 +11,21 @@ import alex.ClaseLexica;
 import alex.UnidadLexica;
 
 public class Main {
-   public static void main(String[] args) throws FileNotFoundException, IOException {
-     Reader input  = new InputStreamReader(new FileInputStream(args[0]));
-     AnalizadorLexicoTiny al = new AnalizadorLexicoTiny(input);
-     UnidadLexica unidad = null;
-     do {
-       try {  
-         unidad = al.yylex();
-         System.out.println(unidad);  
-       }
-       catch(ECaracterInesperado e) {
-               System.out.println(e.getMessage());
-               System.exit(1);
-       }
-     }
-     while (unidad.clase() != ClaseLexica.EOF);
-    }        
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		System.out.println(args[0]);
+		Reader input  = new InputStreamReader(new FileInputStream(args[0]));
+		AnalizadorLexicoTiny al = new AnalizadorLexicoTiny(input);
+		UnidadLexica unidad = null;
+		do {
+			try {  
+				unidad = al.yylex();
+				System.out.println(unidad);  
+			}
+			catch(ECaracterInesperado e) {
+				System.out.println(e.getMessage());
+				System.exit(1);
+			}
+		}
+		while (unidad.clase() != ClaseLexica.EOF);
+	}        
 } 

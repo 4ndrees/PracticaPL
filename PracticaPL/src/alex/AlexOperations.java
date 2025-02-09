@@ -50,6 +50,9 @@ public class AlexOperations {
 	public UnidadLexica unidadMenor() {
 		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.MENOR);
 	}
+	public UnidadLexica unidadMayor() {
+		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.MAYOR);
+	}
 	public UnidadLexica unidadAsignacion() {
 		return new UnidadLexicaUnivaluada(alex.fila(), alex.columna(), ClaseLexica.ASIGNACION);
 	}
