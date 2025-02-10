@@ -1,0 +1,80 @@
+digraph Diagrama_Estados_Tiny0 {
+	size = "100";
+	node [shape = doublecircle]; INICIO, REC_ABRE_PAR, REC_CIERRA_PAR, REC_MENOS_UNITARIO, 
+	REC_EOF, REC_DISTINTO, REC_ASIGNACION, REC_IGUALDAD, REC_DIV, REC_POR, REC_MENOR, REC_MENORIGUAL, 
+	REC_MAYOR, REC_MAYORIGUAL, REC_IDENTIFICADOR, REC_MAS, REC_MENOS, REC_ENT, REC_0, REC_DEC, REC_EXP, 
+	REC_SECCION, REC_EXP0, REC_ARROBA, REC_PUNTOYCOMA, REC_ALLAVE, REC_CLLAVE;
+
+	node [shape = circle];
+	INICIO -> INICIO [label = "\\b, \\r, \\n, blank space" ];
+	INICIO -> REC_IDENTIFICADOR [label = "[a-z], [A-Z], _" ];
+	INICIO -> REC_MAS [label = "+" ];
+	INICIO -> REC_MENOS [label = "-" ];
+	INICIO -> REC_POR [label = "*" ];
+	INICIO -> REC_DIV [label = "/" ];
+	INICIO -> REC_0 [label = "0" ];
+	INICIO -> REC_ABRE_PAR [label = "(" ];
+	INICIO -> REC_CIERRA_PAR [label = ")" ];
+	INICIO -> REC_MENOR [label = "<" ];
+	INICIO -> REC_MAYOR [label = ">" ];
+	INICIO -> REC_ASIGNACION [label = "=" ];
+	INICIO -> REC_0 [label = "0" ];
+	INICIO -> REC_EXCLAMACION [label = "!" ];
+	INICIO -> REC_EOF [label = "EOF" ];
+	INICIO -> REC_ENT [label = "[1-9]" ];
+	INICIO -> REC_ALM [label = "#"];
+    INICIO -> REC_AMPERSAN [label = "&"];
+    INICIO -> REC_ARROBA [label = "@"];
+    INICIO -> REC_PUNTOYCOMA [label = ";"];
+    INICIO -> REC_ALLAVE [label = "{"];
+    INICIO -> REC_CLLAVE [label = "}"];
+    
+    REC_AMPERSAN -> REC_SECCION [label = "&"];
+    
+    REC_ALM -> REC_COMENTARIO [label = "[^\\n, EOF]"];
+    
+    REC_COMENTARIO -> REC_EOF [label = "EOF"];
+    
+	REC_ABRE_PAR -> REC_MENOS_U [ label = "-"];
+	REC_MENOS_U -> REC_MENOS_UNITARIO [ label = ")"];
+
+	REC_IDENTIFICADOR -> REC_IDENTIFICADOR [ label = "[a-z], [A-Z], [0-9], _" ];
+
+	REC_ENT -> REC_ENT [label = "[0-9]" ];
+	REC_ENT -> REC_IDEC [label = "." ];
+	REC_ENT -> REC_IEXPL [label = "e, E" ];
+
+	REC_0 -> REC_IDEC [ label = "." ];
+
+	REC_MAS -> REC_ENT [label = "[1-9]" ];
+	REC_MAS -> REC_0 [label = "0" ];
+
+	REC_MENOS -> REC_ENT [label = "[1-9]" ];
+	REC_MENOS -> REC_0 [label = "0" ];
+
+	REC_MENOR -> REC_MENORIGUAL [label = "=" ];
+
+	REC_MAYOR -> REC_MAYORIGUAL [label = "=" ];
+
+	REC_EXCLAMACION -> REC_DISTINTO [label = "="];
+
+	REC_ASIGNACION -> REC_IGUALDAD [label = "="];
+
+	REC_IDEC -> REC_DEC [label = "[1-9]"];
+	REC_IDEC -> REC_IDEC0 [label = "0"];
+
+	REC_IDEC0 -> REC_DEC [label = "[1-9]"];
+
+	REC_DEC -> REC_DEC [label = "[1-9]"];
+	REC_DEC -> REC_IEXPL [label = "e, E"];
+	REC_DEC -> REC_IDEC0 [label = "0"];
+
+    REC_IEXPL -> REC_IEXPS [label = "+, -"];
+	REC_IEXPL -> REC_EXP [label = "[1-9]"];
+	REC_IEXPL -> REC_EXP0 [label = "0"];
+    
+	REC_IEXPS -> REC_EXP0 [label = "0"];
+	REC_IEXPS -> REC_EXP [label = "[1-9]"];
+    
+    REC_EXP -> REC_EXP [label = "[0-9]"];
+}
