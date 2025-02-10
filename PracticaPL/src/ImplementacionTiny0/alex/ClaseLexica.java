@@ -1,4 +1,4 @@
-package alex;
+package ImplementacionTiny0.alex;
 
 public enum ClaseLexica {
 	SEPARADOR, MAS, MENOS, MENOSUNITARIO, POR, DIV, IGUAL, MENOR,

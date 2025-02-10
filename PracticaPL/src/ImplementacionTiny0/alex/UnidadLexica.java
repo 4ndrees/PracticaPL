@@ -1,4 +1,4 @@
-package alex;
+package ImplementacionTiny0.alex;
 
 public abstract class UnidadLexica {
 	
