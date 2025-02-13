@@ -31,9 +31,10 @@ digraph Diagrama_Estados_Tiny0 {
     
     REC_AMPERSAN -> REC_SECCION [label = "&"];
     
-    REC_ALM -> REC_COMENTARIO [label = "[^\\n, EOF]"];
+    REC_ALM -> REC_COMENTARIO [label = "#"];
     
     REC_COMENTARIO -> REC_EOF [label = "EOF"];
+    REC_COMENTARIO -> REC_COMENTARIO [label = "[^\\n, EOF]"];
     
 	REC_ABRE_PAR -> REC_MENOS_U [ label = "-"];
 	REC_MENOS_U -> REC_MENOS_UNITARIO [ label = ")"];
