@@ -1,5 +1,5 @@
 package alex;
-import alex.AlexOperations.ECaracterInesperado;
+import alex.ALexOperations.ECaracterInesperado;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,9 +18,8 @@ public class DomJudge {
 	}	
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-    	//Reader input  = new InputStreamReader(System.in);
-    	Reader input  = new InputStreamReader(new FileInputStream(args[0]));
-    	AnalizadorLexicoTiny al = new AnalizadorLexicoTiny(input);
+    	Reader input  = new InputStreamReader(System.in);
+       	AnalizadorLexicoTiny al = new AnalizadorLexicoTiny(input);
     	UnidadLexica unidad = null;
     	boolean error;
      	do {

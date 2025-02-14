@@ -1,6 +1,6 @@
 package alex;
 
-import alex.AlexOperations.ECaracterInesperado;
+import alex.ALexOperations.ECaracterInesperado;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

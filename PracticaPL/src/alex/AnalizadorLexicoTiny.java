@@ -360,7 +360,7 @@ public class AnalizadorLexicoTiny {
   private boolean zzEOFDone;
 
   /* user code: */
-	private AlexOperations ops;
+	private ALexOperations ops;
 	public String lexema() {return yytext();}
 	public int fila() {return yyline+1;}
 	public int columna() {return yycolumn+1;}
@@ -372,7 +372,7 @@ public class AnalizadorLexicoTiny {
    * @param   in  the java.io.Reader to read input from.
    */
   public AnalizadorLexicoTiny(java.io.Reader in) {
-  	ops = new AlexOperations(this);
+  	ops = new ALexOperations(this);
     this.zzReader = in;
   }
 
